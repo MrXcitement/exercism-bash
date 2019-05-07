@@ -5,10 +5,10 @@ tag ?= 0.1.0
 all: run
 
 docker-run:
-	mkdir -p $(HOME)/.config/exercism
+	mkdir -p $(CURDIR)/.config/exercism
 	docker run \
 		-dit \
-		-v $(HOME)/.config/exercism:/root/.config/exercism \
+		-v $(CURDIR)/.config/exercism:/root/.config/exercism \
 		-v $(CURDIR):/workspace \
 		--name $(imagename) \
 		$(username)/$(imagename):$(tag)
