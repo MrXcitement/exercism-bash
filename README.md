@@ -1,9 +1,9 @@
 # Exercism 'C' Track
-An Exercism 'C' track project. 
+My Exercism 'C' track project solutions. 
 
 ## Overview
-This project uses the docker exercism c image to create a container that can be
-used to work through the 'c' track exercises.
+This project uses the docker exercism c image to create a container that can I
+use to work through the 'c' track exercises.
 
 ## Usage
 
