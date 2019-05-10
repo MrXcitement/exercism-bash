@@ -1,13 +1,13 @@
-# Exercism 'C' Track
-My Exercism 'C' track project solutions. 
+# Exercism 'bash' Track
+My Exercism 'bash' track project solutions. 
 
 ## Overview
 This project uses the docker exercism c image to create a container that can I
-use to work through the 'c' track exercises.
+use to work through the 'bash' track exercises.
 
 ## Usage
 
-To run the exercism 'c' container
+To run the exercism 'bash' container
 
 ```
 $ make docker-run
