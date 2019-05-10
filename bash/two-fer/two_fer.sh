@@ -15,10 +15,7 @@ set -o nounset
 
 main() {
 	local name
-	name=you
-	if [[ $# -gt 0 ]]; then
-		name="$*"
-	fi
+	name=${1:-you}
 	echo "One for ${name}, one for me."
 }
 
