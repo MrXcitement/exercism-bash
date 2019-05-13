@@ -2,39 +2,38 @@
 My Exercism 'bash' track project solutions. 
 
 ## Overview
-This project uses the docker exercism c image to create a container that can I
-use to work through the 'bash' track exercises.
+This project uses a docker exercism 'bash' image to create a container that can be
+used to work through the 'bash' track exercises.
 
 ## Usage
-
 To run the exercism 'bash' container
 
 ```
-$ make docker-run
+$ make run
 ```
 
-To 'exec' a login shell in the container
+To execute a login shell on the container
 
 ```
-$ make docker-exec
+$ make shell
 ```
 
 To stop the container
 
 ```
-$ make docker-stop
+$ make stop
 ```
 
 To kill the container, if it can't be stopped
 
 ```
-$ make docker-kill
+$ make kill
 ```
 
-To rm the container
+To remove a stopped container
 
 ```
-$ make docker-rm
+$ make rm
 ```
 
 ## Contributing
@@ -45,7 +44,7 @@ conduct, and the process for submitting pull requests to us.
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available,
-see the [tags on this repository](https://github.com/mrxcitement/docker-exercism-base/tags). 
+see the [tags on this repository](https://github.com/mrxcitement/exercism-base/tags). 
 
 ## Authors
 
