@@ -3,6 +3,9 @@ services:
   exercism:
     image: mrbarker/exercism-bash:0.1.1
     volumes:
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.vimrc:/root/.vimrc
+      - ~/.vim:/root/.vim
       - ./.config/exercism:/root/.config/exercism
       - ./:/root/exercism
     tty: true

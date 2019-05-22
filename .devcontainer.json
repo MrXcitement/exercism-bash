@@ -3,5 +3,6 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "exercism",
 	"workspaceFolder": "/root/exercism",
-	"extensions": ["timonwong.shellcheck", "jetmartin.bats"]
+	"extensions": ["timonwong.shellcheck", "jetmartin.bats"],
+	"postCreateCommand": ["bash", "postcreate.bash"]
 }

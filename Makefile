@@ -1,26 +1,34 @@
-username ?= mrbarker
-imagename ?= exercism-bash
-tag ?= 0.1.1
+# Makefile
+# Provide a standard interface for working with the exercism docker container.
+# Mike Barker <mike@thebarkers.com>
+# May 22nd, 2019
 
-all: run
+service ?= exercism
 
-run:
+.PHONY: all up down shell start stop kill rm
+all: up
+
+up:
 	mkdir -p $(CURDIR)/.config/exercism
-	docker run \
-		-dit \
-		-v $(CURDIR)/.config/exercism:/root/.config/exercism \
-		-v $(CURDIR):/workspace \
-		--name $(imagename) \
-		$(username)/$(imagename):$(tag)
+	docker-compose up -d
+
+down:
+	docker-compose down
+
+ps:
+	docker-compose ps
 
 shell:
-	docker exec -it $(imagename) bash --login
+	docker-compose exec $(service) bash --login
+
+start:
+	docker-compose start
 
 stop:
-	docker stop $(imagename)
+	docker-compose stop
 
 kill:
-	docker kill $(imagename)
+	docker-compose kill
 
 rm:
-	docker rm $(imagename)
+	docker-compose rm
