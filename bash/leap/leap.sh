@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # leap.sh
 # Given a year, report if it is a leap year.
-# on every year that is evenly divisible by 4
-#   except every year that is evenly divisible by 100
-#     unless the year is also evenly divisible by 400
 
 # Mike Barker
 # May 22nd, 2019
@@ -11,15 +8,20 @@
 set -o errexit
 set -o nounset
 
+# How do we use this thing?
 usage() {
     echo 'Usage: leap.sh <year>'
 }
 
+# a leap year is...
+# on every year that is evenly divisible by 4
+#  except every year that is evenly divisible by 100
+#   unless the year is also evenly divisible by 400
 is_leap() {
     year="$1"
-    if [[ $(( year % 4 )) -eq 0 ]] &&
-       [[ $(( year % 100 )) -ne 0 ]] ||
-       [[ $(( year % 400 )) -eq 0 ]]; then
+    if (( year % 4 == 0 )) &&
+       (( year % 100 != 0 )) ||
+       (( year % 400 == 0 )); then
         echo "true"
     else
         echo "false"
@@ -28,12 +30,12 @@ is_leap() {
 
 main() {
     # No arguments or too many
-    if [[ $# -eq 0 || $# -gt 1 ]]; then
+    if (( $# == 0 )) || (( $# > 1 )); then
         usage
         return 1
     fi
 
-    # Validate first argument is a number
+    # Validate first argument is an integer
     re_is_int='^[0-9]+$'
     if [[ ! "$1" =~ $re_is_int ]]; then
         usage
@@ -45,5 +47,4 @@ main() {
 
     return 0
 }
-
 main "$@"
