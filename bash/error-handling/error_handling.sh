@@ -13,7 +13,7 @@ usage() {
 }
 
 main() {
-    if (( $# == 0 )) || (( $# > 1 )); then
+    if (( $# != 1 )); then
         usage
         return 1
     fi
