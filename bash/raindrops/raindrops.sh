@@ -19,7 +19,11 @@ set -o errexit
 set -o nounset
 
 main() {
-    echo "$1"
+    if (( $1 % 3 == 0 )); then
+        echo "Pling"
+    else
+        echo "$1"
+    fi
 }
 
 main "$@"
