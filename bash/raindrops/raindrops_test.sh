@@ -8,7 +8,7 @@
 }
 
 @test "the sound for 3 is Pling" {
-  skip
+  #skip
   run bash raindrops.sh 3
   [ "$status" -eq 0 ]
   [ "$output" == "Pling" ]
