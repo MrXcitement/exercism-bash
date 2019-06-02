@@ -15,7 +15,7 @@
 }
 
 @test "the sound for 5 is Plang" {
-  skip
+  #skip
   run bash raindrops.sh 5
   [ "$status" -eq 0 ]
   [ "$output" == "Plang" ]

@@ -19,11 +19,19 @@ set -o errexit
 set -o nounset
 
 main() {
+    local speak
+
+    speak=""
     if (( $1 % 3 == 0 )); then
-        echo "Pling"
-    else
-        echo "$1"
+        speak="Pling"
     fi
+    if (( $1 % 5 == 0 )); then
+        speak+="Plang"
+    fi
+    if [[ "$speak" == "" ]]; then
+        speak="$1"
+    fi
+    echo "$speak"
 }
 
 main "$@"
