@@ -28,6 +28,9 @@ main() {
     if (( $1 % 5 == 0 )); then
         speak+="Plang"
     fi
+    if (( $1 % 7 == 0 )); then
+        speak+="Plong"
+    fi
     if [[ "$speak" == "" ]]; then
         speak="$1"
     fi

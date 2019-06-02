@@ -22,7 +22,7 @@
 }
 
 @test "the sound for 7 is Plong" {
-  skip
+  #skip
   run bash raindrops.sh 7
   [ "$status" -eq 0 ]
   [ "$output" == "Plong" ]
